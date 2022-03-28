@@ -13,22 +13,22 @@ public class Baekjoon21757_나누기 {
 		int N = Integer.parseInt(br.readLine());
 		StringTokenizer st = new StringTokenizer(br.readLine()," ");
 		
-		int[] numbers = new int[N+1]; //뽑은 애들 저장하는 배열
+		long[] numbers = new long[N+1]; //뽑은 애들 저장하는 배열
 		long tot = 0;
 		for(int i=1; i<=N; i++) {
-			int num = Integer.parseInt(st.nextToken());
+			long num = Long.parseLong(st.nextToken());
 			
 			tot += num;
 			numbers[i] = num;
 		}
 		
-		int[] sum = new int[N+1];
+		long[] sum = new long[N+1];
 		for(int i=1; i<=N; i++) {
 			sum[i] = sum[i-1] + numbers[i];
 		}
 		
 		long ans = 0;
-		int[][] dp = new int[N+1][N+1];
+		long[][] dp = new long[N+1][5];
 		//그룹 하나의 합이 전체tot/4여야 함
 		if(tot%4==0) {
 			long part = tot/4;
