@@ -33,6 +33,9 @@ public class Baekjoon20926_얼음미로 {
 				
 				int num = 0;
 				switch (c) {
+				case 'H':
+					num = -1;
+					break;
 				case 'R':
 					num = 10;
 					break;
@@ -71,8 +74,6 @@ public class Baekjoon20926_얼음미로 {
 		
 		pq = new PriorityQueue<>();
 		pq.offer(user);
-		
-		visited[user.i][user.j] = true;
 		
 		while(!pq.isEmpty()) {
 			
